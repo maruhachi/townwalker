@@ -1,15 +1,23 @@
 <!doctype html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common_header :: head(~{::title},~{::link})">
     <title>Home</title>
+    <link href="https://unpkg.com/tabulator-tables@4.4.1/dist/css/tabulator.min.css" rel="stylesheet">
 </head>
 <body>
-<h1>青空</h1>
-<h2>Jumping</h2>
-<h3>Heart</h3>
+<section class="section">
+    <div class="columns">
+        <div class="column is-6">
+                <h1>青空</h1>
+                <h2>Jumping</h2>
+                <h3>Heart</h3>
+                <div id="location-table"></div>
+        </div>
+    </div>
+</section>
+<div th:replace="common_header :: common_script(~{::script})">
+    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.4.1/dist/js/tabulator.min.js"></script>
+    <script type="text/javascript" src="js/home.js"></script>
+</div>
 </body>
 </html>

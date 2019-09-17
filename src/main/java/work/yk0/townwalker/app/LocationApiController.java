@@ -8,6 +8,7 @@ import work.yk0.townwalker.entity.Location;
 import work.yk0.townwalker.repository.LocationMapper;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author ykonno.
@@ -24,5 +25,6 @@ public class LocationApiController {
     public List<Location> location(){
         List<Location> allLocation = locationMapper.findAll();
         return allLocation;
+//        return Map.of("data", allLocation);
     }
 }
