@@ -7,3 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" integrity="sha256-vK3UTo/8wHbaUn+dTQD0X6dzidqc5l7gczvH+Bnowwk=" crossorigin="anonymous" />
     <th:block th:replace="${links}" />
 </head>
+
+<div th:fragment="navbar">
+    <nav class="navbar is-dark" role="navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <!-- titleエレメント -->3
+                <h1 class="title has-text-white-ter is-">
+                    まちあるきスタンプめぐり
+                </h1>
+            </a>
+        </div>
+    </nav>
+</div>
