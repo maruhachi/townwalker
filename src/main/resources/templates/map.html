@@ -1,0 +1,14 @@
+<!doctype html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="common_header :: head(~{::title},~{})">
+    <title>まちあるきスタンプ マップ</title>
+</head>
+<body>
+<nav th:replace="common_header :: navbar"></nav>
+<section class="section">
+    <div id="map"></div>
+</section>
+<script src="js/map.js"></script>
+<script async defer
+</body>
+</html>

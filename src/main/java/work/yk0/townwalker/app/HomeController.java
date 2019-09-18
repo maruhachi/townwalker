@@ -16,6 +16,11 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/map")
+    public String map(){
+        return "map";
+    }
+
     @GetMapping("/hello")
     @ResponseBody
     public String hello(){
