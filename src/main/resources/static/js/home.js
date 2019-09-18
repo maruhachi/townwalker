@@ -1,5 +1,5 @@
 var table = new Tabulator("#location-table", {
-        ajaxURL:"https://townwalker.herokuapp.com/api/location", //ajax URL
+        ajaxURL:"/api/location", //ajax URL
         height:"400px",
         layout:"fitColumns",
         columns:[
