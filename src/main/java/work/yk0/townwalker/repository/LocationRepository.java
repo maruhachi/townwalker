@@ -11,7 +11,7 @@ import java.util.List;
  * @since 2019/09/10.
  */
 @Mapper
-public interface LocationMapper {
+public interface LocationRepository {
 
     @Select("Select * from Location")
     public List<Location> findAll();
