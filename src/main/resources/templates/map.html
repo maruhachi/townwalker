@@ -6,9 +6,11 @@
 <body>
 <nav th:replace="common_header :: navbar"></nav>
 <section class="section">
-    <div id="map"></div>
+    <p>設置場所</p>
+    <div id="map" style="height:100vh"></div>
 </section>
 <script src="js/map.js"></script>
 <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUXXGm_pHzW4ajM-RvW7leFw2VlZh33oc&callback=initMap"></script>
 </body>
 </html>
