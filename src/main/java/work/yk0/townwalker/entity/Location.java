@@ -16,4 +16,6 @@ public class Location {
     private String address;
 
     private String member;
+
+    private String latLon;
 }
