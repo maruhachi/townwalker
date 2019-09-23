@@ -14,5 +14,8 @@ import java.util.List;
 public interface LocationRepository {
 
     @Select("Select * from Location")
-    public List<Location> findAll();
+    List<Location> findAll();
+
+    @Select("Select * from location where address like '%市%'")
+    List<Location> findFixedDest();
 }

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import work.yk0.townwalker.entity.Location;
 import work.yk0.townwalker.repository.LocationRepository;
+import work.yk0.townwalker.service.LatLonService;
 
 import java.util.List;
 
@@ -20,10 +21,20 @@ public class LocationApiController {
     @Autowired
     final LocationRepository locationRepository = null;
 
+    @Autowired
+    final LatLonService latLonService = null;
+
     @GetMapping("location")
     public List<Location> location(){
         List<Location> allLocation = locationRepository.findAll();
         return allLocation;
 //        return Map.of("data", allLocation);
     }
+
+    @GetMapping("latlon")
+    public String latLon(){
+        latLonService.registerLatLon();
+        return "success";
+    }
+
 }
