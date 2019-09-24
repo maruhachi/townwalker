@@ -6,7 +6,7 @@ plugins {
 
 group = 'work.yk0'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '8'
+sourceCompatibility = '11'
 
 configurations {
 	developmentOnly
