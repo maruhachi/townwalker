@@ -48,10 +48,18 @@ public class LatLonServiceImpl implements LatLonService {
                     .build()
                     .encode()
                     .toUri();
+            // TODO:第2引数をMapじゃなくてちゃんとした型にする
             Map res = restTemplate.getForObject(uri, Map.class);
-            var feature = ((ArrayList) res.get("Feature")).get(0);
-            var geometry = ((LinkedHashMap) feature).get("Geometry");
-            String latlon = ((LinkedHashMap) geometry).get("Coordinates").toString();
+            if( ((ArrayList)res.get("Feature")).size() > 0 ) {
+                // 1件以上一致する住所があれば
+                var feature = ((ArrayList) res.get("Feature")).get(0);
+                var geometry = ((LinkedHashMap) feature).get("Geometry");
+                var latlon = ((LinkedHashMap) geometry).get("Coordinates").toString();
+
+                locationRepository.updateLatLon(latlon, element.getId());
+            }else{
+                log.info("該当する緯度経度情報がありません : " + element.getDest());
+            }
             log.info("here");
         }
     }
