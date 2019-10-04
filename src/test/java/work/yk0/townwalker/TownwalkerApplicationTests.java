@@ -29,4 +29,11 @@ public class TownwalkerApplicationTests {
 				.andExpect(content().string(containsString("予測不可能driving")));
 	}
 
+	@Test
+	public void Bootが立ち上がりmapが正しく表示されること() throws Exception{
+		this.mockMvc.perform(get("/map")).andDo(print())
+				.andExpect(status().isOk())
+				.andExpect(content().string(containsString("設置場所")));
+	}
+
 }
